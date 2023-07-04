@@ -1,0 +1,45 @@
+-- Selecting All Columns --
+SELECT * FROM employees;
+
+
+-- Selecting Specific Columns --
+SELECT department_id, manager_id FROM departments;
+
+
+-- Using Arithmetic Operators --
+-- Add 300 bouns to salay fo everyone --
+SELECT last_name, salary, salary + 300 AS bouns FROM employees;
+
+-- Multiply 12 to salary because the multipliction it comes first, and then add 100 to every one --
+SELECT last_name, salary, 12 * salary + 100 AS bouns FROM employees;
+
+-- Do the function between the braket first and then do muktiplication --
+SELECT last_name, salary, 12 * (salary + 100) AS bouns FROM employees;
+
+
+-- Defining a Null Value --
+SELECT last_name, job_id, salary, commission_pct FROM employees;
+-- If any function with null value it comes NULL --
+SELECT last_name, 12 * salary * commission_pct FROM employees;
+
+
+-- Using Column Aliases --
+SELECT last_name AS "name", salary * 12 AS "annual salary" FROM employees;
+
+
+-- Concatenation Operator --
+SELECT last_name || job_id As employees FROM employees;
+
+-- Using Literal Character Strings --
+SELECT last_name || ' is a ' || job_id AS "Employees Details" FROM employees;
+
+-- Alternative Quote (q) Operator --
+SELECT department_name || q'[ Department's Manager Id: ]' || manager_id AS "Deprtment and Manager" FROM departments;
+
+
+-- Choose one of Duplicate Rows --
+SELECT DISTINCT department_id FROM employees;
+
+
+-- Displaying the Table Structure --
+DESC employees;
